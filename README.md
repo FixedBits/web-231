@@ -2,5 +2,5 @@
 
 ## Contributors
 
-- Robert Kumar
+- Professor Kumar
 - Victor Soto
