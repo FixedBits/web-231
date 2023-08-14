@@ -1,2 +1,6 @@
-# web-231
- In reference to WEB 231 Enterprise JavaScript I
+# WEB 231 Enterprise JavaScript I
+
+## Contributors
+
+- Robert Kumar
+- Victor Soto
