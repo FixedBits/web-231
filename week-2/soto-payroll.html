@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../week-2/soto-payroll.css">
+        <link rel="stylesheet" href="../site.css">
+
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+        <title>WEB 231 – Enterprise JavaScript I</title>
+
+    </head>
+
+    <body>
+        <h1 id="payroll-header">Payroll System</h1>
+        <h3>Employee record 1</h3>
+        <div id="emp1-div">
+            <ul class="employee-borderlist">
+                <li id="txtFirstNameEmp1">Trixie</li>
+                <li id="txtLastNameEmp1">Nome</li>
+                <li id="txtAddressEmp1">911 Escape Road</li>
+                <li id="txtHireDateEmp1">08/20/2023</li>
+                <li id="txtPayRateEmp1">23.64</li>
+            </ul>
+        </div>
+        <h3>Employee record 2</h3>
+
+        <div id="emp2-div">
+            <ul class="employee-borderlist">
+                <li id="txtFirstNameEmp2">Candy</li>
+                <li id="txtLastNameEmp2">Lewis</li>
+                <li id="txtAddressEmp2">502 Cape Rock</li>
+                <li id="txtHireDateEmp2">07/12/2023</li>
+                <li id="txtPayRateEmp2">19.27</li>
+            </ul>
+        </div>
+        <h3>Employee record 3</h3>
+        <div id="emp3-div">
+            <ul class="employee-borderlist">
+                <li id="txtFirstNameEmp3">Bambi</li>
+                <li id="txtLastNameEmp3">Wood</li>
+                <li id="txtAddressEmp3">166 Lamont Circle</li>
+                <li id="txtHireDateEmp3">06/11/2023</li>
+                <li id="txtPayRateEmp3">21.69.</li>
+            </ul>
+        </div>
+
+
+        <a id="return-home" href="../index.html">Return</a>
+
+    </body>
+    
+    <script>
+
+        //  source for variables: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
+        //  source for toFixed decimal place: https://www.geeksforgeeks.org/javascript-number-tofixed-method/
+        //  source for dateString: https://www.codecademy.com/resources/docs/javascript/dates/toLocaleDateString
+
+
+        //  first set of unordered lists
+
+        let firstNameEmp1 = "Trixie";
+        let lastNameEmp1 = "Nome";
+        let addressEmp1 = "911 Escape Road";
+        let payRateEmp1 = 23.64.toFixed(1); //  Applied the payRate to one decimal place
+        let hireDateEmp1 = new Date("08/20/2023").toLocaleDateString("en-US"); //  Applied the hireDate as a local date string
+
+        //  second set of unordered lists
+
+        let firstNameEmp2 = "Candy";
+        let lastNameEmp2 = "Lewis";
+        let addressEmp2 = "502 Cape Rock";
+        let payRateEmp2 = 19.27.toFixed(1); //  Applied the payRate to one decimal place
+        let hireDateEmp2 = new Date("07/12/2023").toLocaleDateString("en-US"); //  Applied the hireDate as a local date string
+
+        //  third set of unordered lists
+
+        let firstNameEmp3 = "Bambi";
+        let lastNameEmp3 = "Wood";
+        let addressEmp3 = "166 Lamont Circle";
+        let payRateEmp3 = 21.69.toFixed(1); //  Applied the payRate to one decimal place
+        let hireDateEmp3 = new Date("06/11/2023").toLocaleDateString("en-US"); //  Applied the hireDate as a local date string
+
+        //  Bind values for first set of unordered lists
+        document.getElementById("txtFirstNameEmp1").innerHTML = firstNameEmp1;
+        document.getElementById("txtLastNameEmp1").innerHTML = lastNameEmp1;
+        document.getElementById("txtAddressEmp1").innerHTML = addressEmp1;
+        document.getElementById("txtHireDateEmp1").innerHTML = hireDateEmp1;
+        document.getElementById("txtPayRateEmp1").innerHTML = payRateEmp1;
+
+        //  Bind values for second set of unordered lists
+        document.getElementById("txtFirstNameEmp2").innerHTML = firstNameEmp2;
+        document.getElementById("txtLastNameEmp2").innerHTML = lastNameEmp2;
+        document.getElementById("txtAddressEmp2").innerHTML = addressEmp2;
+        document.getElementById("txtHireDateEmp2").innerHTML = hireDateEmp2;
+        document.getElementById("txtPayRateEmp2").innerHTML = payRateEmp2;
+
+        //  Bind values for third set of unordered lists
+        document.getElementById("txtFirstNameEmp3").innerHTML = firstNameEmp3;
+        document.getElementById("txtLastNameEmp3").innerHTML = lastNameEmp3;
+        document.getElementById("txtAddressEmp3").innerHTML = addressEmp3;
+        document.getElementById("txtHireDateEmp3").innerHTML = hireDateEmp3;
+        document.getElementById("txtPayRateEmp3").innerHTML = payRateEmp3;
+
+
+    </script>
+
+</html>
