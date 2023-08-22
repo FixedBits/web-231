@@ -66,10 +66,9 @@
     box-sizing: border-box;
 }
 
-.full-width {
+/*removed width: 100% (50%) per instructions on "web 231 HTML, CSS, and JavaScript Requirements.docx */
 
-
-}
+.full-width {}
 
 .form {
     display: inline-grid;
@@ -79,4 +78,19 @@
 
 .form-field {
     padding: 20px;
+}
+
+/* Added this class per instructions on "web 231 HTML, CSS, and JavaScript Requirements.docx */
+
+#card-example {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+/* Added this class per instructions on "web 231 HTML, CSS, and JavaScript Requirements.docx */
+
+#form-example {
+    width: 600px;
+    margin: 3% auto 0;
+
 }
