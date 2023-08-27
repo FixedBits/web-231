@@ -1,0 +1,61 @@
+/* Additional CSS Styling Requirements **/
+body {
+    font-family: 'Oswald', sans-serif, ariel, helvetica;
+
+    font-size: 28px;
+
+}
+
+.app-header {
+    text-align: center;
+    font-weight: 400;
+}
+
+.card {
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+.form-field {
+    padding: 25px;
+
+}
+
+.input {
+    padding: 14px;
+    font-size: 15px;
+}
+
+/* Adjusted appearance to match assignment Exhibit A**/
+.btn {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    width: 95%;
+
+}
+
+.card-content {
+    text-align: center;
+}
+
+/* Adjusted spacing to match assignment Exhibit A**/
+.separator {
+    padding: 40px;
+}
+
+/* Adjusted margin to match assignment Exhibit A**/
+#card-content {
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-size: 38px;
+}
+
+/* Adjusted anchor position to match assignment Exhibit A**/
+.rtnhome-anchor {
+
+    margin-left: 23.5%;
+    padding-top: 30px;
+}
