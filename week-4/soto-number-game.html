@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="soto-number-game.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <title>WEB 231 – Enterprise JavaScript I</title>
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the numbers game!</h1>
+            <!-- created the first card/form with input and button-->
+            <div class="card">
+
+                <div class="card-title">
+                    Pick a number between 1 and 10
+                </div>
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtMyNumber">Guess the number:</label>
+                        <input type="text" id="txtMyNumber" class="input" name="numberguessed">
+                    </div>
+                    <div class="card-content">
+                        <button type="submit" id="btnSubmit" class="btn btn-primary fullwidth card-content">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- made this div with class of separator to create a gap between cards -->
+            <div class="separator"></div>
+            <!-- created the second card where the output will display -->
+            <div class="card">
+                <div class="card-title">
+                    Results
+                </div>
+                <div class="card-content">
+                    <p id="card-content"></p>
+                </div>
+            </div>
+            <!-- created CSS class of rtnhome-anchor to position link accordingly -->
+            <div class="rtnhome-anchor">
+                <a id="return-home" href="../index.html">Return</a>
+            </div>
+        </div>
+        <script>
+            // generate a random number between 1 and 10
+            const rnd = Math.floor((Math.random() * 10) + 1);
+            // register an onclick event for btnSubmit
+            document.getElementById("btnSubmit").onclick = function () {
+                // capture the inputted value from txtMyNumber and assign it to a variable named myNumber
+                var myNumber = parseFloat(document.getElementById("txtMyNumber").value);
+                // use if…else if…else, compare the myNumber variable from 6.b. against the rnd variable
+                // build a string with the message “The number is less than <myNumber>”
+                if (myNumber > rnd) {
+                    message = "The number is less than " + myNumber;
+                }
+                // build a string with message “The number is greater than <myNumber>”
+                else if (myNumber < rnd) {
+                    message = "The number is greater than " + myNumber;
+                }
+                // build a string with the message “Congratulations! You picked the correct number!”
+                else {
+                    message = "Congratulations! You picked the correct number! ";
+                }
+                // bind to the results card content
+                document.getElementById("card-content").innerHTML = message;
+            }
+        </script>
+    </body>
+
+</html>
