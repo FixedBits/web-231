@@ -1,0 +1,83 @@
+/* Additional CSS Styling Requirements **/
+body {
+    font-family: 'Oswald', sans-serif, ariel, helvetica;
+
+    font-size: 28px;
+
+}
+
+.app-header {
+    text-align: center;
+    font-weight: 400;
+}
+
+.card {
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+.form-field {
+    padding: 25px;
+
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    width: 95%;
+
+}
+
+.card-content {
+    text-align: center;
+}
+
+.separator {
+    padding: 40px;
+}
+
+
+#card-content {
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-size: 48px;
+}
+
+.rtnhome-anchor {
+
+    margin-left: 23.5%;
+    padding-top: 30px;
+}
+
+#sequence {
+    padding: 15px;
+    font-size: 15px;
+    width: 12%;
+    position: fixed;
+    border-radius: 5px;
+}
+
+/* Adjusted appearance to match assignment **/
+
+.btn-primary {
+    background-color: #4F3674;
+    color: white;
+    width: 174%;
+    margin-top: 40px;
+}
+
+.choose-a-number {
+    margin-right: 5px;
+    font-size: 28px;
+}
+
+.card-title {
+    padding: 20px;
+}
+
+.sequence-resultsfnt {
+    margin: 1px;
+}
