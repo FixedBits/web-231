@@ -56,7 +56,7 @@ body {
     padding: 15px;
     font-size: 15px;
     width: 12%;
-    position: fixed;
+    position: absolute;
     border-radius: 5px;
 }
 
