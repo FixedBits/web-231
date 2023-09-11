@@ -24,7 +24,7 @@ body {
 }
 
 .btn {
-    padding: 20px;
+    padding: 5px 20px;
     border-radius: 5px;
     margin-bottom: 25px;
     width: 95%;
@@ -55,8 +55,7 @@ body {
 #sequence {
     padding: 15px;
     font-size: 15px;
-    width: 12%;
-    position: absolute;
+    width: 239px;
     border-radius: 5px;
 }
 
@@ -80,4 +79,10 @@ body {
 
 .sequence-resultsfnt {
     margin: 1px;
+}
+
+.btn.display-sequencefnt {
+    font-size: 28px;
+    padding: 25px;
+
 }
