@@ -1,0 +1,115 @@
+/* Additional CSS Styling Requirements **/
+body {
+    font-family: Oswald, sans-serif, Arial, Helvetica;
+    font-size: 28px;
+}
+
+.app-header {
+    text-align: center;
+    font-weight: 400;
+}
+
+.card {
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.form-field {
+    padding: 25px;
+
+}
+
+.btn {
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    width: 45.5%;
+
+
+
+}
+
+.separator {
+    padding: 40px;
+}
+
+
+#card-content {
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-size: 48px;
+}
+
+.rtnhome-anchor {
+
+    margin-left: 23.5%;
+    padding-top: 30px;
+}
+
+
+/* Adjusted appearance to match assignment **/
+
+.btn-primary {
+    background-color: #4F3674;
+    color: white;
+    margin-top: 40px;
+
+    ;
+}
+
+.btn.display-results {
+    font-size: 28px;
+    padding: 25px;
+
+
+}
+
+#favoriteList {
+    padding: 15px;
+    font-size: 15px;
+    width: 239px;
+    border-radius: 5px;
+}
+
+/* Added formatting for the tables **/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+}
+
+th,
+
+td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-weight: 400;
+    padding-bottom: 12px;
+}
+
+tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+/*Added additional formatting for the card titles**/
+#titleElement {
+
+    font-weight: 400;
+    font-size: 2em;
+    color: #4F3674;
+    text-align: center;
+}
