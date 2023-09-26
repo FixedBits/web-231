@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="soto-javazon.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <title>WEB 231 – Enterprise JavaScript I</title>
+    </head>
+    <!-- required modification: onload -->
+
+    <body onload="onLoad()">
+        <div id="container">
+            <h1 class="app-header">Welcome to the Javazon App!</h1>
+
+            <div class="card">
+
+                <div class="card-title">
+                    Javazon Selection Form
+                </div>
+                <div class="form">
+                    <div class="form-field">
+                        <label for="listing" class="drop-down-menu">Choose a listing</label>
+
+                        <select id="listing" class="drop-down-menu">
+                            <option value="select">--Select--</option>
+                            <option value="products">Products</option>
+                            <option value="services">Services</option>
+                            <option value="employees">Employees</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="card-content">
+                    <button type="submit" id="btnDisplayListing" class="btn btn-primary fullwidth card-content display-results">Display Listing</button>
+                </div>
+
+            </div>
+
+
+            <!-- Created CSS class of rtnhome-anchor to position link accordingly -->
+            <div class="rtnhome-anchor">
+                <a id="return-home" href="../index.html">Return</a>
+            </div>
+
+            <div class="separator">
+                <!-- Div with class of "separator" to create a gap between cards -->
+            </div>
+
+
+
+            <!-- Created the second card where the results will display -->
+            <div class="card">
+                <div class="card-title">
+
+                </div>
+                <div class="card-content">
+
+                    <!-- Title for selection made -->
+                    <div id="titleElement"></div>
+
+                    <div id="products"></div>
+                    <!-- Place for favorite services -->
+                    <div id="services" style="display: none;"></div>
+
+                    <!-- Place for favorite employees -->
+                    <div id="employees" style="display: none;"></div>
+
+                    <p id="card-content"></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            // a. Product class
+            class Product {
+                constructor(id, description, price, quantity) {
+                    this.id = id;
+                    this.description = description;
+                    this.price = parseFloat(price).toFixed(2);
+                    this.quantity = quantity;
+                    this.totalValue = (this.price * this.quantity).toFixed(2);
+                }
+            }
+
+            // b. Services class
+            class Services {
+                constructor(id, description, hourlyRate, min) {
+                    this.id = id;
+                    this.description = description;
+                    this.hourlyRate = parseFloat(hourlyRate).toFixed(2);
+                    this.min = min;
+                }
+            }
+
+            // c. Employee class
+            class Employee {
+                constructor(id, firstName, lastName, salary) {
+                    this.id = id;
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.salary = parseFloat(salary).toFixed(2);
+                }
+            }
+
+            // d. Create 5 new Product objects
+            let product1 = new Product(9781118008188, 'HTML and CSS: Design and Build Websites', 22.26, 10);
+            let product2 = new Product(9781491952023, 'JavaScript: The Definitive Guide 7/E', 41.33, 7);
+            let product3 = new Product(9781449331818, 'Learning JavaScript Design Patterns 1/E', 25.99, 3);
+            let product4 = new Product(9781617292422, 'Express in Action: Writing, building, and testing Node.js applications 1/E', 34.91, 3);
+            let product5 = new Product(9781491954461, 'MongoDB The Definitive Guide', 33.70, 8);
+
+            // e. Create 3 new Services objects
+            let service1 = new Services(100, 'Website Design', 150, 25);
+            let service2 = new Services(101, 'DevOps Consulting', 125, 50);
+            let service3 = new Services(102, 'Database Design', 125, 15);
+
+            // f. Create 5 new Employee objects
+            let employee1 = new Employee(1007, 'Beethoven', 'Ludwig', 13.99);
+            let employee2 = new Employee(1008, 'Bach', 'Johann', 22.30);
+            let employee3 = new Employee(1009, 'Mozart', 'Wolfgang', 19.50);
+            let employee4 = new Employee(1010, 'Brahms', 'Johannes', 12);
+            let employee5 = new Employee(1011, 'Haydn', 'Joseph', 32.50);
+
+            // g. Assign the products div to a variable named products
+            let products = document.getElementById('products');
+
+            // h. Assign the services div to a variable named services
+            let services = document.getElementById('services');
+
+            // i. Assign the employees div to a variable named employees
+            let employees = document.getElementById('employees');
+
+            // j. Set the products div display to none
+            products.style.display = 'none';
+
+            // k. Set the services div display to none
+            services.style.display = 'none';
+
+            // l. Set the employees div display to none
+            employees.style.display = 'none';
+
+            // Exhibit B commences
+            // a. Register an onclick event for btnDisplayListing
+
+            document.getElementById('btnDisplayListing').onclick = function () {
+                // b. Capture the value from the select list
+                let choice = document.getElementById('listing').value;
+
+
+                // c. Bind the properties of your 5 Product objects to an HTML table
+                let productTable = '<table><tr><th>Product ID</th><th>Description</th><th>Price</th><th>Quantity</th><th>Total Value</th></tr>';
+                [product1, product2, product3, product4, product5].forEach(product => {
+                    productTable += `<tr>
+                        <td>${product.id}</td>
+                        <td>${product.description}</td>
+                        <td>${product.price}</td>
+                        <td>${product.quantity}</td>
+                        <td>${product.totalValue}</td>
+                        </tr>`;
+                });
+                productTable += '</table>';
+
+                // d. Bind the properties of your 3 Services objects to an HTML table
+                let serviceTable =
+                    '<table><tr><th>Service ID</th><th>Description</th><th>Hourly Rate</th><th>Minimum Billable hours</th></tr>';
+                [service1, service2, service3].forEach(service => {
+                    serviceTable += `<tr>
+                        <td>${service.id}</td>
+                        <td>${service.description}</td>
+                        <td>${service.hourlyRate}</td>
+                        <td>${service.min}</td>
+                        
+                        </tr>`;
+                });
+                serviceTable += '</table>';
+
+                // e. Bind the properties of your 5 Employee objects to an HTML table
+                let employeeTable = '<table><tr><th>Employee ID</th><th>Last Name</th><th>First Name</th><th>Salary</th></tr>';
+                [employee1, employee2, employee3, employee4, employee5].forEach(employee => {
+                    employeeTable += `<tr>
+                        <td>${employee.id}</td>
+                        <td>${employee.firstName}</td>
+                        <td>${employee.lastName}</td>
+                        <td>${employee.salary}</td>
+                        </tr>`;
+                });
+                employeeTable += '</table>';
+
+                // f. JavaScript switch statement
+                switch (choice) {
+                    // For products
+                    case 'products':
+
+                        products.innerHTML = productTable;
+                        products.style.display = 'block';
+                        services.style.display = 'none';
+                        employees.style.display = 'none';
+                        titleElement.textContent = 'Javazon Products';
+
+
+                        break;
+
+                    // For services
+                    case 'services':
+                        services.innerHTML = serviceTable;
+                        services.style.display = 'block';
+                        products.style.display = 'none';
+                        employees.style.display = 'none';
+                        titleElement.textContent = 'Javazon Services';
+
+
+                        break;
+                    // For employees
+                    case 'employees':
+                        employees.innerHTML = employeeTable;
+                        employees.style.display = 'block';
+                        products.style.display = 'none';
+                        services.style.display = 'none';
+                        titleElement.textContent = 'Javazon Employees';
+
+                        break;
+                    // Set default
+                    default:
+                        products.style.display = 'none';
+                        services.style.display = 'none';
+                        employees.style.display = 'none';
+                        titleElement.textContent = '';
+
+                }
+            };
+        </script>
+
+    </body>
+
+</html>
