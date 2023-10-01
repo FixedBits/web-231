@@ -1,0 +1,85 @@
+body {
+    /* Additional CSS Styling Requirements **/
+    font-family: Oswald, sans-serif, Arial, Helvetica;
+    font-size: 28px;
+}
+
+.app-header {
+    text-align: center;
+    font-weight: 400;
+}
+
+.card {
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.form-field {
+    padding: 25px;
+
+}
+
+.btn {
+    border-radius: 5px;
+    margin-bottom: 25px;
+    width: 64.5%;
+    display: flow-root;
+
+
+}
+
+.separator {
+    padding: 40px;
+}
+
+
+
+
+.rtnhome-anchor {
+
+    margin-left: 23.5%;
+    padding-top: 30px;
+}
+
+
+/* Adjusted appearance to match assignment **/
+
+.btn-primary {
+    background-color: #4F3674;
+    color: white;
+    margin-top: 40px;
+
+}
+
+.btn.display-results {
+    font-size: 24px;
+    padding: 20px;
+
+}
+
+
+
+/* Added additional formatting for the card titles**/
+#titleElement {
+
+    font-weight: 400;
+    font-size: 2em;
+    color: #4F3674;
+    text-align: center;
+
+}
+
+/* Additional CSS formatting for card-content **/
+.card-content {
+    text-align: center;
+    font-size: 45px;
+}
+
+/* Additional CSS formatting for third card-content **/
+.card3-content {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10%;
+}

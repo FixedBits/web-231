@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="soto-alphabet-game.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <title>WEB 231 – Enterprise JavaScript I</title>
+    </head>
+
+    <body onload="onLoad()">
+
+        <div id="container">
+
+            <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+
+            <div class="card">
+
+                <div class="card-title">
+                    Alphabet Number Form
+                </div>
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtPosition" class="alphabet-ltr-pos">Alphabet Letter Position</label>
+
+                        <input type="text" class="input" id="txtPosition">
+
+
+                    </div>
+                </div>
+                <div class="card-content">
+                    <button type="submit" id="btnFindLetter" class="btn btn-primary fullwidth card-content display-results">
+                        Find Letter
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- Created CSS class of rtnhome-anchor to position link accordingly -->
+            <div class="rtnhome-anchor">
+                <a id="return-home" href="../index.html">Return</a>
+            </div>
+
+            <div class="separator">
+                <!-- Div with class of "separator" to create a gap between cards -->
+            </div>
+
+
+            <!-- Created the second card where the results will display -->
+            <div class="card">
+                <div class="card-title">
+                    Letters in the Alphabet
+                </div>
+
+                <!-- card-content where the alphabetOutput string will bind to. -->
+                <div class="card-content" id="alphabetOutput">
+                </div>
+
+            </div>
+            <div class="separator">
+                <!-- Div with class of "separator" to create a gap between cards -->
+            </div>
+
+            <!-- Created the third card where the results of the onclick event will be displayed  -->
+            <!-- card-title with a text value of “Results.”  -->
+            <div id="alphabet">
+                <div class="card">
+                    <div class="card-title">
+                        Results
+                    </div>
+                    <div class="card3-content" id="alphabet-letter">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script>
+            // Create a character array of all the letters in English alphabet
+            let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+            // Create a string variable named alphabetOutput and give it a default value of an empty string.
+            let alphabetOutput = '';
+
+            // Using JavaScript’s for/in loop, iterate over the alphabet array and build a string of the letters in the alphabet with each letter separated by a comma.
+            for (let index in alphabet) {
+                alphabetOutput += alphabet[index] + ', ';
+            }
+
+            // JavaScript’s slice() operation to remove the trailing comma from the string.
+            alphabetOutput = alphabetOutput.slice(0, -1);
+
+
+            // a. Register an onclick event for btnFindLetter.
+            document.getElementById('btnFindLetter').onclick = function () {
+                // b. Capture the entered value and bind it to a variable named pos.
+                let pos = document.getElementById('txtPosition').value;
+
+                // Find the alphabet letter in the array that matches the entered position and assign it to a variable named letter.
+                let letter = alphabet[pos - 1];
+
+                // Using an if…else statement, compare letter against the JavaScript keyword undefined
+                if (letter === undefined) {
+                    // if undefined, bind the string value “There are not <pos> letters in the alphabet” to the alphabet-letter div.
+                    document.getElementById('alphabet-letter').textContent = `There are not ${pos} letters in the alphabet`;
+                } else {
+                    // else, bind the string value “<letter> is at position <pos> in the alphabet” to the alphabet-letter div.
+                    document.getElementById('alphabet-letter').textContent = `${letter} is at position ${pos} in the alphabet`;
+                }
+            };
+
+            // Bind the alphabetOutput string to the alphabet div.
+            document.getElementById('alphabetOutput').textContent = alphabetOutput;
+
+            // End of JS code.
+
+        </script>
+
+
+
+    </body>
+
+</html>
