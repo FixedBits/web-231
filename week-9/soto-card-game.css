@@ -1,0 +1,103 @@
+/* Additional CSS Styling Requirements **/
+body {
+    font-family: 'Oswald', sans-serif, ariel, helvetica;
+
+    font-size: 28px;
+
+}
+
+.app-header {
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 60px;
+}
+
+.card {
+    margin: auto;
+
+}
+
+/* Added new div to accurately describe functionality */
+.card-dealer {
+    display: inline-grid;
+    grid-template-columns: auto;
+
+}
+
+
+.btn {
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-primary {
+    background-color: #4F3674;
+    color: white;
+    margin-top: 10px;
+
+}
+
+.btn.display-results {
+    font-size: 24px;
+    padding: 25px;
+    width: 465%;
+    margin-left: 20px;
+
+
+}
+
+.card-content {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+
+}
+
+/* Adjusted spacing to match assignment **/
+.separator {
+    padding: 40px;
+}
+
+/* Adjusted margin to match assignment **/
+#card-content {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+/* Adjusted anchor position to match assignment **/
+.rtnhome-anchor {
+
+    margin-left: 25%;
+    padding-top: 30px;
+}
+
+/* Add a new CSS class to <yourLastName>-card-game.css named player-card and center it’s text */
+.player-card {
+    text-align: center;
+
+    /* Added shadow to match style of Exhibit D */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+
+}
+
+/* Added additional styling for clarity*/
+.player-card:hover {
+    box-shadow: 1px 8px 22px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+
+/* Set the CSS to a display of grid with four columns a padding of 10 pixels,and a grid gap of 10 pixels */
+#player-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    /* modified gap size to match the look of exhibit D*/
+    gap: 15px;
+    padding: 10px;
+
+
+
+}
